@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="br.com.powercrm.infrastructure.api.ActivityAPITest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-06-03T15:12:19" hostname="MacBook-Air-de-Bruno.local" time="0.088">
+  <properties/>
+  <testcase name="givenAValidId_whenCallsDeleteAcitivity_shouldReturnNoContent()" classname="br.com.powercrm.infrastructure.api.ActivityAPITest" time="0.088"/>
+  <system-out><![CDATA[12:12:17.338 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+12:12:17.348 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+12:12:17.380 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [br.com.powercrm.infrastructure.api.ActivityAPITest] from class [org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper]
+12:12:17.388 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [br.com.powercrm.infrastructure.api.ActivityAPITest], using SpringBootContextLoader
+12:12:17.392 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [br.com.powercrm.infrastructure.api.ActivityAPITest]: class path resource [br/com/powercrm/infrastructure/api/ActivityAPITest-context.xml] does not exist
+12:12:17.392 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [br.com.powercrm.infrastructure.api.ActivityAPITest]: class path resource [br/com/powercrm/infrastructure/api/ActivityAPITestContext.groovy] does not exist
+12:12:17.392 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [br.com.powercrm.infrastructure.api.ActivityAPITest]: no resource found for suffixes {-context.xml, Context.groovy}.
+12:12:17.393 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [br.com.powercrm.infrastructure.api.ActivityAPITest]: ActivityAPITest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:12:17.503 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/bruno/trabalho/activity/infrastructure/build/classes/java/main/br/com/powercrm/infrastructure/Main.class]
+12:12:17.504 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration br.com.powercrm.infrastructure.Main for test class br.com.powercrm.infrastructure.api.ActivityAPITest
+12:12:17.506 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - @TestExecutionListeners is not present for class [br.com.powercrm.infrastructure.api.ActivityAPITest]: using defaults.
+12:12:17.506 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+12:12:17.521 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@46e190ed, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@383c3eb3, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@20ab76ee, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@485caa8f, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2703d91, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5be052ca, org.springframework.test.context.transaction.TransactionalTestExecutionListener@2007435e, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@da28d03, org.springframework.test.context.event.EventPublishingTestExecutionListener@ebda593, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5792c08c, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4d157493, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@54c622a7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@37348491, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@76e3b45b, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@10b4e7f8]
+12:12:17.523 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@3596b249 testClass = ActivityAPITest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7237f3c1 testClass = ActivityAPITest, locations = '{}', classes = '{class br.com.powercrm.infrastructure.Main}', contextInitializerClasses = '[]', activeProfiles = '{test-integration}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@4e1a46fb, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@698fee9a, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@63df1b67, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@484cdb1d, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@7dbe2ebf, [ImportsContextCustomizer@781711b7 key = [br.com.powercrm.infrastructure.configuration.ObjectMapperConfig, org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.context.MessageSourceAutoConfiguration, org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration, org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration, org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfiguration, org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration, org.springframework.boot.autoconfigure.hateoas.HypermediaAutoConfiguration, org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration, org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration, org.springframework.boot.autoconfigure.jsonb.JsonbAutoConfiguration, org.springframework.boot.autoconfigure.mustache.MustacheAutoConfiguration, org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration, org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration, org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration, org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@5ad5be4a, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@6535117e, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@a6357d78, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@0], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.7)
+
+2023-06-03 12:12:17.848  INFO 42649 --- [    Test worker] b.c.p.i.api.ActivityAPITest              : Starting ActivityAPITest using Java 17.0.2 on MacBook-Air-de-Bruno.local with PID 42649 (started by bruno in /Users/bruno/trabalho/activity/infrastructure)
+2023-06-03 12:12:17.849  INFO 42649 --- [    Test worker] b.c.p.i.api.ActivityAPITest              : The following 1 profile is active: "test-integration"
+2023-06-03 12:12:18.933  INFO 42649 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-06-03 12:12:18.934  INFO 42649 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-06-03 12:12:18.935  INFO 42649 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-06-03 12:12:18.980  INFO 42649 --- [    Test worker] b.c.p.i.api.ActivityAPITest              : Started ActivityAPITest in 1.415 seconds (JVM running for 2.37)
+
+MockHttpServletRequest:
+      HTTP Method = PUT
+      Request URI = /activities/cancele/123
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = br.com.powercrm.infrastructure.api.controllers.ActivityController
+           Method = br.com.powercrm.infrastructure.api.controllers.ActivityController#deleteById(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 204
+    Error message = null
+          Headers = []
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

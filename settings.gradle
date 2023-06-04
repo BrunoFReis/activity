@@ -1,0 +1,5 @@
+rootProject.name = 'activity'
+include 'domain'
+include 'application'
+include 'infrastructure'
+

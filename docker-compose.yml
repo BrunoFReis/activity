@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+  app:
+    container_name: activities
+    build: .
+    profiles: ["app"]
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysql
+    networks:
+      - adm_activity
+
+  mysql:
+    container_name: activity_mysql
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=powercrm_activity
+    security_opt:
+      - seccomp:unconfined
+    ports:
+      - 3312:3306
+    networks:
+      - adm_activity
+
+networks:
+  adm_activity:

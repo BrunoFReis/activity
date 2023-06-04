@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="br.com.powercrm.domain.activity.ActivityTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2023-05-30T17:26:04" hostname="MacBook-Air-de-Bruno.local" time="0.039">
+  <properties/>
+  <testcase name="givenAnInvalidType_whenCallNewActivity_thenShouldReceiveError()" classname="br.com.powercrm.domain.activity.ActivityTest" time="0.018"/>
+  <testcase name="givenAValidActivity_whenCallUpdate_thenReturnActivityUpdated()" classname="br.com.powercrm.domain.activity.ActivityTest" time="0.003"/>
+  <testcase name="givenAnInvalidNegotiationId_whenCallNewActivity_thenShouldReceiveError()" classname="br.com.powercrm.domain.activity.ActivityTest" time="0.001"/>
+  <testcase name="givenAnInvalidCompanyId_whenCallNewActivity_thenShouldReceiveError()" classname="br.com.powercrm.domain.activity.ActivityTest" time="0.001"/>
+  <testcase name="givenAValidCanceledActivity_whenCallActivate_thenReturnActivityActivated()" classname="br.com.powercrm.domain.activity.ActivityTest" time="0.001"/>
+  <testcase name="givenAnInvalidDescriptionLengthLessThan3_whenCallNewActivity_thenShouldReceiveError()" classname="br.com.powercrm.domain.activity.ActivityTest" time="0.0"/>
+  <testcase name="givenAnInvalidEmptyDescription_whenCallNewActivity_thenShouldReceiveError()" classname="br.com.powercrm.domain.activity.ActivityTest" time="0.0"/>
+  <testcase name="givenAValidParams_whenCallNewActivity_thenInstantiateanActivity()" classname="br.com.powercrm.domain.activity.ActivityTest" time="0.0"/>
+  <testcase name="givenAValidActivity_whenCallUpdate_thenReturnActivityUpdatedCompleted()" classname="br.com.powercrm.domain.activity.ActivityTest" time="0.001"/>
+  <testcase name="givenAnInvalidDescriptionLengthMoreThan255_whenCallNewActivity_thenShouldReceiveError()" classname="br.com.powercrm.domain.activity.ActivityTest" time="0.001"/>
+  <testcase name="givenAnInvalidCreativeCompanyUser_whenCallNewActivity_thenShouldReceiveError()" classname="br.com.powercrm.domain.activity.ActivityTest" time="0.001"/>
+  <testcase name="givenAnInvalidResponsibleCompanyUserId_whenCallNewActivity_thenShouldReceiveError()" classname="br.com.powercrm.domain.activity.ActivityTest" time="0.001"/>
+  <testcase name="givenAValidActivity_whenCallCompleted_thenReturnActivityActivated()" classname="br.com.powercrm.domain.activity.ActivityTest" time="0.001"/>
+  <testcase name="givenAValidActivity_whenCallUpdate_thenReturnActivityUpdatedCanceled()" classname="br.com.powercrm.domain.activity.ActivityTest" time="0.0"/>
+  <testcase name="givenAValidActivity_whenCallCancel_thenReturnActivityCanceled()" classname="br.com.powercrm.domain.activity.ActivityTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

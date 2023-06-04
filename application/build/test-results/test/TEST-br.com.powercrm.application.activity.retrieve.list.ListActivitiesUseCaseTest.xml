@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="br.com.powercrm.application.activity.retrieve.list.ListActivitiesUseCaseTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-06-03T15:34:24" hostname="MacBook-Air-de-Bruno.local" time="0.017">
+  <properties/>
+  <testcase name="givenAValidQuery_whenHasNoResults_thenShouldReturnEmptyActivities()" classname="br.com.powercrm.application.activity.retrieve.list.ListActivitiesUseCaseTest" time="0.01"/>
+  <testcase name="givenAValidQuery_whenCallsListActivities_thenShouldReturnActivities()" classname="br.com.powercrm.application.activity.retrieve.list.ListActivitiesUseCaseTest" time="0.005"/>
+  <testcase name="givenAValidQuery_whenGatewayThrowsRandomException_thenShouldAException()" classname="br.com.powercrm.application.activity.retrieve.list.ListActivitiesUseCaseTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

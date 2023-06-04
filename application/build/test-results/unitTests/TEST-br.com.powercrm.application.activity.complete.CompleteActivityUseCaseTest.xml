@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="br.com.powercrm.application.activity.complete.CompleteActivityUseCaseTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-05-30T17:26:03" hostname="MacBook-Air-de-Bruno.local" time="0.36">
+  <properties/>
+  <testcase name="givenAInvalidID_whenCallCompleteActivity_thenShouldReturnBeOk()" classname="br.com.powercrm.application.activity.complete.CompleteActivityUseCaseTest" time="0.351"/>
+  <testcase name="givenAValidCommand_whenCallCompleteActivity_thenShouldBeOK()" classname="br.com.powercrm.application.activity.complete.CompleteActivityUseCaseTest" time="0.005"/>
+  <testcase name="givenAValidCommand_whenGatewayThrowsRandomException_thenShouldAException()" classname="br.com.powercrm.application.activity.complete.CompleteActivityUseCaseTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

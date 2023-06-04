@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DefaultCreateActivityUseCase.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">application</a> &gt; <a href="index.source.html" class="el_package">br.com.powercrm.application.activity.create</a> &gt; <span class="el_source">DefaultCreateActivityUseCase.java</span></div><h1>DefaultCreateActivityUseCase.java</h1><pre class="source lang-java linenums">package br.com.powercrm.application.activity.create;
+
+import br.com.powercrm.application.utils.DateUtils;
+import br.com.powercrm.domain.activity.Activity;
+import br.com.powercrm.domain.activity.ActivityGateway;
+import br.com.powercrm.domain.validation.handler.Notification;
+import io.vavr.control.Either;
+
+import java.text.ParseException;
+import java.util.Objects;
+
+import static io.vavr.API.Try;
+import static io.vavr.control.Either.left;
+
+public class DefaultCreateActivityUseCase extends CreateActivityUseCase {
+
+    private final ActivityGateway activityGateway;
+
+<span class="fc" id="L19">    public DefaultCreateActivityUseCase(final ActivityGateway activityGateway) {</span>
+<span class="fc" id="L20">        this.activityGateway = Objects.requireNonNull(activityGateway);</span>
+<span class="fc" id="L21">    }</span>
+
+
+    @Override
+    public Either&lt;Notification, CreateActivityOutput&gt; execute(final CreateActivityCommand aCommand) throws ParseException {
+<span class="fc" id="L26">        final var aCreativeCompanyUserId = aCommand.creativeCompanyUserId();</span>
+<span class="fc" id="L27">        final var aResponsibleCompanyUserId = aCommand.responsibleCompanyUserId();</span>
+<span class="fc" id="L28">        final var aCompanyId = aCommand.companyId();</span>
+<span class="fc" id="L29">        final var aNegotiationId = aCommand.negotiationId();</span>
+<span class="fc" id="L30">        final var aDescription = aCommand.description();</span>
+<span class="fc" id="L31">        final var aResponse = aCommand.response();</span>
+<span class="fc" id="L32">        final var aType = aCommand.type();</span>
+<span class="fc" id="L33">        final var aScheduleDate = DateUtils.convertStringDateToInstant(aCommand.scheduleDate());</span>
+
+<span class="fc" id="L35">        final var notification = Notification.create();</span>
+
+<span class="fc" id="L37">        final var anActivity = Activity.newActivity(</span>
+                aCreativeCompanyUserId,
+                aResponsibleCompanyUserId,
+                aCompanyId,
+                aNegotiationId,
+                aDescription,
+                aResponse,
+                aType,
+                aScheduleDate
+        );
+<span class="fc" id="L47">        anActivity.validate(notification);</span>
+
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        return notification.hasError() ? left(notification) : create(anActivity);</span>
+    }
+
+    private Either&lt;Notification, CreateActivityOutput&gt; create(final Activity anActivity) {
+<span class="fc" id="L53">        return Try(() -&gt; this.activityGateway.create(anActivity))</span>
+<span class="fc" id="L54">                .toEither()</span>
+<span class="fc" id="L55">                .bimap(Notification::create, CreateActivityOutput::from);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

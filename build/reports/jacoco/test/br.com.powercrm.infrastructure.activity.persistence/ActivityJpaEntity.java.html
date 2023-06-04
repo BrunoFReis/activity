@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ActivityJpaEntity.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infrastructure</a> &gt; <a href="index.source.html" class="el_package">br.com.powercrm.infrastructure.activity.persistence</a> &gt; <span class="el_source">ActivityJpaEntity.java</span></div><h1>ActivityJpaEntity.java</h1><pre class="source lang-java linenums">package br.com.powercrm.infrastructure.activity.persistence;
+
+import br.com.powercrm.domain.activity.Activity;
+import br.com.powercrm.domain.activity.ActivityID;
+import br.com.powercrm.domain.activity.ActivityStatus;
+import br.com.powercrm.domain.activity.ActivityType;
+
+import javax.persistence.*;
+import java.time.Instant;
+
+@Entity
+@Table(name = &quot;activities&quot;)
+public class ActivityJpaEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = &quot;creative_company_user_id&quot;, nullable = false)
+    private Long creativeCompanyUserId;
+
+    @Column(name = &quot;responsible_company_user_id&quot;, nullable = false)
+    private Long responsibleCompanyUserId;
+
+    @Column(name = &quot;company_id&quot;, nullable = false)
+    private Long companyId;
+
+    @Column(name = &quot;negotiation_id&quot;, nullable = false)
+    private Long negotiationId;
+
+    @Column(name = &quot;description&quot;, nullable = false)
+    private String description;
+
+    @Column(name = &quot;response&quot;)
+    private String response;
+
+    @Column(name = &quot;type&quot;, nullable = false)
+    private int type;
+
+    @Column(name = &quot;status&quot;, nullable = false)
+    private int status;
+
+    @Column(name = &quot;scheduled&quot;, nullable = false, columnDefinition = &quot;DATETIME(6)&quot;)
+    private Instant scheduled;
+
+    @Column(name = &quot;createdAt&quot;, nullable = false, columnDefinition = &quot;DATETIME(6)&quot;)
+    private Instant createdAt;
+
+    @Column(name = &quot;updatedAt&quot;, nullable = false, columnDefinition = &quot;DATETIME(6)&quot;)
+    private Instant updatedAt;
+
+    @Column(name = &quot;finishedAt&quot;, columnDefinition = &quot;DATETIME(6)&quot;)
+    private Instant finishedAt;
+
+<span class="fc" id="L55">    public ActivityJpaEntity() {</span>
+<span class="fc" id="L56">    }</span>
+
+    private ActivityJpaEntity(
+            final Long aCreativeCompanyUserId,
+            final Long aResponsibleCompanyUserId,
+            final Long aCompanyId,
+            final Long aNegotiationId,
+            final String aDescription,
+            final String aResponse,
+            final int aType,
+            final int aStatus,
+            final Instant aScheduled,
+            final Instant aCreatedAt,
+            final Instant anUpdatedAt,
+            final Instant aFinishedAt
+<span class="fc" id="L71">    ) {</span>
+<span class="fc" id="L72">        this.creativeCompanyUserId = aCreativeCompanyUserId;</span>
+<span class="fc" id="L73">        this.responsibleCompanyUserId = aResponsibleCompanyUserId;</span>
+<span class="fc" id="L74">        this.companyId = aCompanyId;</span>
+<span class="fc" id="L75">        this.negotiationId = aNegotiationId;</span>
+<span class="fc" id="L76">        this.description = aDescription;</span>
+<span class="fc" id="L77">        this.response = aResponse;</span>
+<span class="fc" id="L78">        this.type = aType;</span>
+<span class="fc" id="L79">        this.status = aStatus;</span>
+<span class="fc" id="L80">        this.scheduled = aScheduled;</span>
+<span class="fc" id="L81">        this.createdAt = aCreatedAt;</span>
+<span class="fc" id="L82">        this.updatedAt = anUpdatedAt;</span>
+<span class="fc" id="L83">        this.finishedAt = aFinishedAt;</span>
+<span class="fc" id="L84">    }</span>
+
+    private ActivityJpaEntity(
+            final Long anId,
+            final Long aCreativeCompanyUserId,
+            final Long aResponsibleCompanyUserId,
+            final Long aCompanyId,
+            final Long aNegotiationId,
+            final String aDescription,
+            final String aResponse,
+            final int aType,
+            final int aStatus,
+            final Instant aScheduled,
+            final Instant aCreatedAt,
+            final Instant anUpdatedAt,
+            final Instant aFinishedAt
+<span class="fc" id="L100">    ) {</span>
+<span class="fc" id="L101">        this.id = anId;</span>
+<span class="fc" id="L102">        this.creativeCompanyUserId = aCreativeCompanyUserId;</span>
+<span class="fc" id="L103">        this.responsibleCompanyUserId = aResponsibleCompanyUserId;</span>
+<span class="fc" id="L104">        this.companyId = aCompanyId;</span>
+<span class="fc" id="L105">        this.negotiationId = aNegotiationId;</span>
+<span class="fc" id="L106">        this.description = aDescription;</span>
+<span class="fc" id="L107">        this.response = aResponse;</span>
+<span class="fc" id="L108">        this.type = aType;</span>
+<span class="fc" id="L109">        this.status = aStatus;</span>
+<span class="fc" id="L110">        this.scheduled = aScheduled;</span>
+<span class="fc" id="L111">        this.createdAt = aCreatedAt;</span>
+<span class="fc" id="L112">        this.updatedAt = anUpdatedAt;</span>
+<span class="fc" id="L113">        this.finishedAt = aFinishedAt;</span>
+<span class="fc" id="L114">    }</span>
+
+    public static ActivityJpaEntity from(final Activity anActivity) {
+<span class="fc" id="L117">        return new ActivityJpaEntity(</span>
+<span class="fc" id="L118">                anActivity.getCreativeCompanyUserId(),</span>
+<span class="fc" id="L119">                anActivity.getResponsibleCompanyUserId(),</span>
+<span class="fc" id="L120">                anActivity.getCompanyId(),</span>
+<span class="fc" id="L121">                anActivity.getNegotiationId(),</span>
+<span class="fc" id="L122">                anActivity.getDescription(),</span>
+<span class="fc" id="L123">                anActivity.getResponse(),</span>
+<span class="fc" id="L124">                anActivity.getType().getId(),</span>
+<span class="fc" id="L125">                anActivity.getStatus().getId(),</span>
+<span class="fc" id="L126">                anActivity.getScheduled(),</span>
+<span class="fc" id="L127">                anActivity.getCreatedAt(),</span>
+<span class="fc" id="L128">                anActivity.getUpdatedAt(),</span>
+<span class="fc" id="L129">                anActivity.getFinishedAt()</span>
+        );
+    }
+
+    public static ActivityJpaEntity fromId(final Activity anActivity) {
+<span class="fc" id="L134">        return new ActivityJpaEntity(</span>
+<span class="fc" id="L135">                Long.parseLong(anActivity.getId().getValue()),</span>
+<span class="fc" id="L136">                anActivity.getCreativeCompanyUserId(),</span>
+<span class="fc" id="L137">                anActivity.getResponsibleCompanyUserId(),</span>
+<span class="fc" id="L138">                anActivity.getCompanyId(),</span>
+<span class="fc" id="L139">                anActivity.getNegotiationId(),</span>
+<span class="fc" id="L140">                anActivity.getDescription(),</span>
+<span class="fc" id="L141">                anActivity.getResponse(),</span>
+<span class="fc" id="L142">                anActivity.getType().getId(),</span>
+<span class="fc" id="L143">                anActivity.getStatus().getId(),</span>
+<span class="fc" id="L144">                anActivity.getScheduled(),</span>
+<span class="fc" id="L145">                anActivity.getCreatedAt(),</span>
+<span class="fc" id="L146">                anActivity.getUpdatedAt(),</span>
+<span class="fc" id="L147">                anActivity.getFinishedAt()</span>
+        );
+    }
+
+    public Activity toAggregate() {
+<span class="fc" id="L152">        return Activity.with(</span>
+<span class="fc" id="L153">                ActivityID.from(getId().toString()),</span>
+<span class="fc" id="L154">                getCreativeCompanyUserId(),</span>
+<span class="fc" id="L155">                getResponsibleCompanyUserId(),</span>
+<span class="fc" id="L156">                getCompanyId(),</span>
+<span class="fc" id="L157">                getNegotiationId(),</span>
+<span class="fc" id="L158">                getDescription(),</span>
+<span class="fc" id="L159">                getResponse(),</span>
+<span class="fc" id="L160">                ActivityType.getActivityType((short) getType()),</span>
+<span class="fc" id="L161">                ActivityStatus.getActivityStatus((short) getStatus()),</span>
+<span class="fc" id="L162">                getScheduled(),</span>
+<span class="fc" id="L163">                getCreatedAt(),</span>
+<span class="fc" id="L164">                getUpdatedAt(),</span>
+<span class="fc" id="L165">                getFinishedAt()</span>
+        );
+    }
+
+    public Long getId() {
+<span class="fc" id="L170">        return id;</span>
+    }
+
+    public void setId(Long id) {
+<span class="nc" id="L174">        this.id = id;</span>
+<span class="nc" id="L175">    }</span>
+
+    public Long getCreativeCompanyUserId() {
+<span class="fc" id="L178">        return creativeCompanyUserId;</span>
+    }
+
+    public void setCreativeCompanyUserId(Long creativeCompanyUserId) {
+<span class="fc" id="L182">        this.creativeCompanyUserId = creativeCompanyUserId;</span>
+<span class="fc" id="L183">    }</span>
+
+    public Long getResponsibleCompanyUserId() {
+<span class="fc" id="L186">        return responsibleCompanyUserId;</span>
+    }
+
+    public void setResponsibleCompanyUserId(Long responsibleCompanyUserId) {
+<span class="fc" id="L190">        this.responsibleCompanyUserId = responsibleCompanyUserId;</span>
+<span class="fc" id="L191">    }</span>
+
+    public Long getCompanyId() {
+<span class="fc" id="L194">        return companyId;</span>
+    }
+
+    public void setCompanyId(Long companyId) {
+<span class="fc" id="L198">        this.companyId = companyId;</span>
+<span class="fc" id="L199">    }</span>
+
+    public Long getNegotiationId() {
+<span class="fc" id="L202">        return negotiationId;</span>
+    }
+
+    public void setNegotiationId(Long negotiationId) {
+<span class="fc" id="L206">        this.negotiationId = negotiationId;</span>
+<span class="fc" id="L207">    }</span>
+
+    public String getDescription() {
+<span class="fc" id="L210">        return description;</span>
+    }
+
+    public void setDescription(String description) {
+<span class="fc" id="L214">        this.description = description;</span>
+<span class="fc" id="L215">    }</span>
+
+    public String getResponse() {
+<span class="fc" id="L218">        return response;</span>
+    }
+
+    public void setResponse(String response) {
+<span class="nc" id="L222">        this.response = response;</span>
+<span class="nc" id="L223">    }</span>
+
+    public int getType() {
+<span class="fc" id="L226">        return type;</span>
+    }
+
+    public void setType(int type) {
+<span class="nc" id="L230">        this.type = type;</span>
+<span class="nc" id="L231">    }</span>
+
+    public int getStatus() {
+<span class="fc" id="L234">        return status;</span>
+    }
+
+    public void setStatus(int status) {
+<span class="nc" id="L238">        this.status = status;</span>
+<span class="nc" id="L239">    }</span>
+
+    public Instant getScheduled() {
+<span class="fc" id="L242">        return scheduled;</span>
+    }
+
+    public void setScheduled(Instant scheduled) {
+<span class="fc" id="L246">        this.scheduled = scheduled;</span>
+<span class="fc" id="L247">    }</span>
+
+    public Instant getCreatedAt() {
+<span class="fc" id="L250">        return createdAt;</span>
+    }
+
+    public void setCreatedAt(Instant createdAt) {
+<span class="fc" id="L254">        this.createdAt = createdAt;</span>
+<span class="fc" id="L255">    }</span>
+
+    public Instant getUpdatedAt() {
+<span class="fc" id="L258">        return updatedAt;</span>
+    }
+
+    public void setUpdatedAt(Instant updatedAt) {
+<span class="fc" id="L262">        this.updatedAt = updatedAt;</span>
+<span class="fc" id="L263">    }</span>
+
+    public Instant getFinishedAt() {
+<span class="fc" id="L266">        return finishedAt;</span>
+    }
+
+    public void setFinishedAt(Instant finishedAt) {
+<span class="nc" id="L270">        this.finishedAt = finishedAt;</span>
+<span class="nc" id="L271">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - DeleteActivityUseCaseIT</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>DeleteActivityUseCaseIT</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/br.com.powercrm.application.activity.delete.html">br.com.powercrm.application.activity.delete</a> &gt; DeleteActivityUseCaseIT</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">3</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.024s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">givenAInvalidID_whenCallDeleteActivity_thenShouldReturnBeOk()</td>
+<td class="success">0.007s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">givenAValidCommand_whenCallDeleteActivity_thenShouldBeOK()</td>
+<td class="success">0.013s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">givenAValidCommand_whenGatewayThrowsRandomException_thenShouldAException()</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2023-06-03 12:34:30.921  INFO 49578 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [br.com.powercrm.application.activity.delete.DeleteActivityUseCaseIT], using SpringBootContextLoader
+2023-06-03 12:34:30.922  INFO 49578 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [br.com.powercrm.application.activity.delete.DeleteActivityUseCaseIT]: no resource found for suffixes {-context.xml, Context.groovy}.
+2023-06-03 12:34:30.923  INFO 49578 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2023-06-03 12:34:30.924  INFO 49578 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1566b0b, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@74b5a79b, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@368648c, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@37675fc7, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5db7413, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5c8b824c, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1c87d155, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@11933c65, org.springframework.test.context.event.EventPublishingTestExecutionListener@4f36a9a8, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4f2fcbe0, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@6d80b629, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6578cfe8, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@1f795106, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@2e38e9c2, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@46e123d2]
+Hibernate: select activityjp0_.id as id1_0_, activityjp0_.company_id as company_2_0_, activityjp0_.created_at as created_3_0_, activityjp0_.creative_company_user_id as creative4_0_, activityjp0_.description as descript5_0_, activityjp0_.finished_at as finished6_0_, activityjp0_.negotiation_id as negotiat7_0_, activityjp0_.response as response8_0_, activityjp0_.responsible_company_user_id as responsi9_0_, activityjp0_.scheduled as schedul10_0_, activityjp0_.status as status11_0_, activityjp0_.type as type12_0_, activityjp0_.updated_at as updated13_0_ from activities activityjp0_
+Hibernate: delete from activities where id=?
+Hibernate: select activityjp0_.id as id1_0_, activityjp0_.company_id as company_2_0_, activityjp0_.created_at as created_3_0_, activityjp0_.creative_company_user_id as creative4_0_, activityjp0_.description as descript5_0_, activityjp0_.finished_at as finished6_0_, activityjp0_.negotiation_id as negotiat7_0_, activityjp0_.response as response8_0_, activityjp0_.responsible_company_user_id as responsi9_0_, activityjp0_.scheduled as schedul10_0_, activityjp0_.status as status11_0_, activityjp0_.type as type12_0_, activityjp0_.updated_at as updated13_0_ from activities activityjp0_
+Hibernate: select activityjp0_.id as id1_0_0_, activityjp0_.company_id as company_2_0_0_, activityjp0_.created_at as created_3_0_0_, activityjp0_.creative_company_user_id as creative4_0_0_, activityjp0_.description as descript5_0_0_, activityjp0_.finished_at as finished6_0_0_, activityjp0_.negotiation_id as negotiat7_0_0_, activityjp0_.response as response8_0_0_, activityjp0_.responsible_company_user_id as responsi9_0_0_, activityjp0_.scheduled as schedul10_0_0_, activityjp0_.status as status11_0_0_, activityjp0_.type as type12_0_0_, activityjp0_.updated_at as updated13_0_0_ from activities activityjp0_ where activityjp0_.id=?
+Hibernate: select activityjp0_.id as id1_0_, activityjp0_.company_id as company_2_0_, activityjp0_.created_at as created_3_0_, activityjp0_.creative_company_user_id as creative4_0_, activityjp0_.description as descript5_0_, activityjp0_.finished_at as finished6_0_, activityjp0_.negotiation_id as negotiat7_0_, activityjp0_.response as response8_0_, activityjp0_.responsible_company_user_id as responsi9_0_, activityjp0_.scheduled as schedul10_0_, activityjp0_.status as status11_0_, activityjp0_.type as type12_0_, activityjp0_.updated_at as updated13_0_ from activities activityjp0_
+Hibernate: select count(*) as col_0_0_ from activities activityjp0_
+Hibernate: insert into activities (company_id, created_at, creative_company_user_id, description, finished_at, negotiation_id, response, responsible_company_user_id, scheduled, status, type, updated_at) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select activityjp0_.id as id1_0_0_, activityjp0_.company_id as company_2_0_0_, activityjp0_.created_at as created_3_0_0_, activityjp0_.creative_company_user_id as creative4_0_0_, activityjp0_.description as descript5_0_0_, activityjp0_.finished_at as finished6_0_0_, activityjp0_.negotiation_id as negotiat7_0_0_, activityjp0_.response as response8_0_0_, activityjp0_.responsible_company_user_id as responsi9_0_0_, activityjp0_.scheduled as schedul10_0_0_, activityjp0_.status as status11_0_0_, activityjp0_.type as type12_0_0_, activityjp0_.updated_at as updated13_0_0_ from activities activityjp0_ where activityjp0_.id=?
+Hibernate: select count(*) as col_0_0_ from activities activityjp0_
+Hibernate: select activityjp0_.id as id1_0_0_, activityjp0_.company_id as company_2_0_0_, activityjp0_.created_at as created_3_0_0_, activityjp0_.creative_company_user_id as creative4_0_0_, activityjp0_.description as descript5_0_0_, activityjp0_.finished_at as finished6_0_0_, activityjp0_.negotiation_id as negotiat7_0_0_, activityjp0_.response as response8_0_0_, activityjp0_.responsible_company_user_id as responsi9_0_0_, activityjp0_.scheduled as schedul10_0_0_, activityjp0_.status as status11_0_0_, activityjp0_.type as type12_0_0_, activityjp0_.updated_at as updated13_0_0_ from activities activityjp0_ where activityjp0_.id=?
+Hibernate: select activityjp0_.id as id1_0_0_, activityjp0_.company_id as company_2_0_0_, activityjp0_.created_at as created_3_0_0_, activityjp0_.creative_company_user_id as creative4_0_0_, activityjp0_.description as descript5_0_0_, activityjp0_.finished_at as finished6_0_0_, activityjp0_.negotiation_id as negotiat7_0_0_, activityjp0_.response as response8_0_0_, activityjp0_.responsible_company_user_id as responsi9_0_0_, activityjp0_.scheduled as schedul10_0_0_, activityjp0_.status as status11_0_0_, activityjp0_.type as type12_0_0_, activityjp0_.updated_at as updated13_0_0_ from activities activityjp0_ where activityjp0_.id=?
+Hibernate: update activities set company_id=?, created_at=?, creative_company_user_id=?, description=?, finished_at=?, negotiation_id=?, response=?, responsible_company_user_id=?, scheduled=?, status=?, type=?, updated_at=? where id=?
+Hibernate: select count(*) as col_0_0_ from activities activityjp0_
+Hibernate: select activityjp0_.id as id1_0_0_, activityjp0_.company_id as company_2_0_0_, activityjp0_.created_at as created_3_0_0_, activityjp0_.creative_company_user_id as creative4_0_0_, activityjp0_.description as descript5_0_0_, activityjp0_.finished_at as finished6_0_0_, activityjp0_.negotiation_id as negotiat7_0_0_, activityjp0_.response as response8_0_0_, activityjp0_.responsible_company_user_id as responsi9_0_0_, activityjp0_.scheduled as schedul10_0_0_, activityjp0_.status as status11_0_0_, activityjp0_.type as type12_0_0_, activityjp0_.updated_at as updated13_0_0_ from activities activityjp0_ where activityjp0_.id=?
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.6</a> at 3 de jun. de 2023 12:34:48</p>
+</div>
+</div>
+</body>
+</html>

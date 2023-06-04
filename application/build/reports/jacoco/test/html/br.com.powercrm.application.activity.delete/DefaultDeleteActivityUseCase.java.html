@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DefaultDeleteActivityUseCase.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">application</a> &gt; <a href="index.source.html" class="el_package">br.com.powercrm.application.activity.delete</a> &gt; <span class="el_source">DefaultDeleteActivityUseCase.java</span></div><h1>DefaultDeleteActivityUseCase.java</h1><pre class="source lang-java linenums">package br.com.powercrm.application.activity.delete;
+
+import br.com.powercrm.domain.activity.ActivityGateway;
+import br.com.powercrm.domain.activity.ActivityID;
+import br.com.powercrm.domain.exceptions.DomainException;
+import br.com.powercrm.domain.exceptions.NotFoundException;
+import br.com.powercrm.domain.validation.Error;
+
+import java.util.Objects;
+import java.util.function.Supplier;
+
+public class DefaultDeleteActivityUseCase extends DeleteActivityUseCase {
+
+    private final ActivityGateway activityGateway;
+
+<span class="fc" id="L16">    public DefaultDeleteActivityUseCase(final ActivityGateway activityGateway) {</span>
+<span class="fc" id="L17">        this.activityGateway = Objects.requireNonNull(activityGateway);</span>
+<span class="fc" id="L18">    }</span>
+
+    @Override
+    public void execute(final String anId) {
+<span class="fc" id="L22">        final var activityID = ActivityID.from(anId);</span>
+
+<span class="fc" id="L24">        final var anActivity = this.activityGateway.findById(activityID)</span>
+<span class="fc" id="L25">                .orElseThrow(notFound(activityID));</span>
+
+<span class="fc" id="L27">        anActivity.canceled();</span>
+
+<span class="fc" id="L29">        this.activityGateway.deleteById(anActivity);</span>
+<span class="fc" id="L30">    }</span>
+
+    private Supplier&lt;DomainException&gt; notFound(final ActivityID anId) {
+<span class="fc" id="L33">        return () -&gt; NotFoundException.with(</span>
+<span class="fc" id="L34">                new Error(&quot;Activity with ID %s was not found&quot;.formatted(anId.getValue())));</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

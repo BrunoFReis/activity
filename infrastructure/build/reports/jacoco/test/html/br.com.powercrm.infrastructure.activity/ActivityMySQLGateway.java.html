@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ActivityMySQLGateway.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infrastructure</a> &gt; <a href="index.source.html" class="el_package">br.com.powercrm.infrastructure.activity</a> &gt; <span class="el_source">ActivityMySQLGateway.java</span></div><h1>ActivityMySQLGateway.java</h1><pre class="source lang-java linenums">package br.com.powercrm.infrastructure.activity;
+
+import br.com.powercrm.domain.activity.Activity;
+import br.com.powercrm.domain.activity.ActivityGateway;
+import br.com.powercrm.domain.activity.ActivityID;
+import br.com.powercrm.domain.activity.ActivitySearchQuery;
+import br.com.powercrm.domain.pagination.Pagination;
+import br.com.powercrm.infrastructure.activity.persistence.ActivityJpaEntity;
+import br.com.powercrm.infrastructure.activity.persistence.ActivityRepository;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.data.jpa.domain.Specification;
+import org.springframework.stereotype.Service;
+
+import java.util.Objects;
+import java.util.Optional;
+
+import static br.com.powercrm.infrastructure.utils.SpecificationUtils.equalsLong;
+import static br.com.powercrm.infrastructure.utils.SpecificationUtils.like;
+
+@Service
+public class ActivityMySQLGateway implements ActivityGateway {
+
+    private final ActivityRepository activityRepository;
+
+<span class="fc" id="L27">    public ActivityMySQLGateway(final ActivityRepository activityRepository) {</span>
+<span class="fc" id="L28">        this.activityRepository = Objects.requireNonNull(activityRepository);</span>
+<span class="fc" id="L29">    }</span>
+
+    @Override
+    public Activity create(final Activity anActivity) {
+<span class="fc" id="L33">        return save(ActivityJpaEntity.from(anActivity));</span>
+    }
+
+    @Override
+    public void deleteById(Activity anActivity) {
+<span class="fc" id="L38">        save(ActivityJpaEntity.fromId(anActivity));</span>
+<span class="fc" id="L39">    }</span>
+
+    @Override
+    public void completeById(Activity anActivity) {
+<span class="fc" id="L43">        save(ActivityJpaEntity.fromId(anActivity));</span>
+<span class="fc" id="L44">    }</span>
+
+    @Override
+    public Optional&lt;Activity&gt; findById(final ActivityID anId) {
+<span class="fc" id="L48">        return this.activityRepository.findById(Long.parseLong(anId.getValue()))</span>
+<span class="fc" id="L49">                .map(ActivityJpaEntity::toAggregate);</span>
+    }
+
+    @Override
+    public Activity update(final Activity anActivity) {
+<span class="fc" id="L54">        return save(ActivityJpaEntity.fromId(anActivity));</span>
+    }
+
+    @Override
+    public Pagination&lt;Activity&gt; findAll(final ActivitySearchQuery aQuery) {
+<span class="fc" id="L59">        final var page = PageRequest.of(</span>
+<span class="fc" id="L60">                aQuery.page(),</span>
+<span class="fc" id="L61">                aQuery.perPage(),</span>
+<span class="fc" id="L62">                Sort.by(Direction.fromString(aQuery.direction()), aQuery.sort())</span>
+        );
+
+<span class="fc" id="L65">        final var especifications = Optional.ofNullable(aQuery.terms())</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">                .filter(str -&gt; !str.isBlank())</span>
+<span class="fc" id="L67">                .map(str -&gt; assembleSpecification(str, aQuery.sort())</span>
+                )
+<span class="fc" id="L69">                .orElse(null);</span>
+
+<span class="fc" id="L71">        final var pageResult =</span>
+<span class="fc" id="L72">                this.activityRepository.findAll(Specification.where(especifications), page);</span>
+
+<span class="fc" id="L74">        return new Pagination&lt;&gt;(</span>
+<span class="fc" id="L75">                pageResult.getNumber(),</span>
+<span class="fc" id="L76">                pageResult.getSize(),</span>
+<span class="fc" id="L77">                pageResult.getTotalElements(),</span>
+<span class="fc" id="L78">                pageResult.map(ActivityJpaEntity::toAggregate).toList()</span>
+        );
+    }
+
+    private static Specification&lt;ActivityJpaEntity&gt; assembleSpecification(String str, String sort) {
+<span class="pc bpc" id="L83" title="1 of 4 branches missed.">        if (sort.equals(&quot;description&quot;) || sort.equals(&quot;response&quot;)) {</span>
+<span class="fc" id="L84">            return like(sort, str);</span>
+        }
+
+<span class="fc" id="L87">        return equalsLong(sort, str);</span>
+    }
+
+
+    private Activity save(ActivityJpaEntity anActivity) {
+<span class="fc" id="L92">        return activityRepository.save(anActivity)</span>
+<span class="fc" id="L93">                .toAggregate();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

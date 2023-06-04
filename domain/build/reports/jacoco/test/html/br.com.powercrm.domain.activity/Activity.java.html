@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Activity.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">domain</a> &gt; <a href="index.source.html" class="el_package">br.com.powercrm.domain.activity</a> &gt; <span class="el_source">Activity.java</span></div><h1>Activity.java</h1><pre class="source lang-java linenums">package br.com.powercrm.domain.activity;
+
+import br.com.powercrm.domain.AggregateRoot;
+import br.com.powercrm.domain.validation.ValidationHandler;
+
+import java.time.Instant;
+import java.util.Objects;
+
+public class Activity extends AggregateRoot&lt;ActivityID&gt; implements Cloneable {
+
+    private Long creativeCompanyUserId;
+    private Long responsibleCompanyUserId;
+    private Long companyId;
+    private Long negotiationId;
+    private String description;
+    private String response;
+    private ActivityType type;
+    private ActivityStatus status;
+    private Instant scheduled;
+    private Instant createdAt;
+    private Instant updatedAt;
+    private Instant finishedAt;
+
+    private Activity(
+            final ActivityID anId,
+            final Long aCreativeCompanyUserId,
+            final Long aResponsibleCompanyUserId,
+            final Long aCompanyId,
+            final Long aNegotiationId,
+            final String aDescription,
+            final String aResponse,
+            final ActivityType aType,
+            final Instant aScheduleDate,
+            final Instant aCreationDate,
+            final Instant aUpdateDate,
+            final Instant aFinisheDate
+    ) {
+<span class="fc" id="L38">        super(anId);</span>
+<span class="fc" id="L39">        this.creativeCompanyUserId = aCreativeCompanyUserId;</span>
+<span class="fc" id="L40">        this.responsibleCompanyUserId = aResponsibleCompanyUserId;</span>
+<span class="fc" id="L41">        this.companyId = aCompanyId;</span>
+<span class="fc" id="L42">        this.negotiationId = aNegotiationId;</span>
+<span class="fc" id="L43">        this.description = aDescription;</span>
+<span class="fc" id="L44">        this.response = aResponse;</span>
+<span class="fc" id="L45">        this.type = aType;</span>
+<span class="fc" id="L46">        this.status = ActivityStatus.ACTIVE;</span>
+<span class="fc" id="L47">        this.scheduled = aScheduleDate;</span>
+<span class="fc" id="L48">        this.createdAt = aCreationDate;</span>
+<span class="fc" id="L49">        this.updatedAt = aUpdateDate;</span>
+<span class="fc" id="L50">        this.finishedAt = aFinisheDate;</span>
+<span class="fc" id="L51">    }</span>
+
+    private Activity(
+            final ActivityID anId,
+            final Long aCreativeCompanyUserId,
+            final Long aResponsibleCompanyUserId,
+            final Long aCompanyId,
+            final Long aNegotiationId,
+            final String aDescription,
+            final String aResponse,
+            final ActivityType aType,
+            final ActivityStatus aStatus,
+            final Instant aScheduleDate,
+            final Instant aCreationDate,
+            final Instant aUpdateDate,
+            final Instant aFinisheDate
+    ) {
+<span class="nc" id="L68">        super(anId);</span>
+<span class="nc" id="L69">        this.creativeCompanyUserId = aCreativeCompanyUserId;</span>
+<span class="nc" id="L70">        this.responsibleCompanyUserId = aResponsibleCompanyUserId;</span>
+<span class="nc" id="L71">        this.companyId = aCompanyId;</span>
+<span class="nc" id="L72">        this.negotiationId = aNegotiationId;</span>
+<span class="nc" id="L73">        this.description = aDescription;</span>
+<span class="nc" id="L74">        this.response = aResponse;</span>
+<span class="nc" id="L75">        this.type = aType;</span>
+<span class="nc" id="L76">        this.status = aStatus;</span>
+<span class="nc" id="L77">        this.scheduled = Objects.requireNonNull(aScheduleDate, &quot;'scheduled' should not be null&quot;);</span>
+<span class="nc" id="L78">        this.createdAt = Objects.requireNonNull(aCreationDate, &quot;'createdAt' should not be null&quot;);</span>
+<span class="nc" id="L79">        this.updatedAt = Objects.requireNonNull(aUpdateDate, &quot;'updatedAt' should not be null&quot;);</span>
+<span class="nc" id="L80">        this.finishedAt = aFinisheDate;</span>
+<span class="nc" id="L81">    }</span>
+
+    public static Activity newActivity(
+            final Long aCreativeCompanyUserId,
+            final Long aResponsibleCompanyUserId,
+            final Long aCompanyId,
+            final Long aNegotiationId,
+            final String aDescription,
+            final String aResponse,
+            final ActivityType aType,
+            final Instant aScheduleDate
+    ) {
+<span class="fc" id="L93">        final var id = ActivityID.unique();</span>
+<span class="fc" id="L94">        final var now = Instant.now();</span>
+
+<span class="fc" id="L96">        return new Activity(</span>
+                id,
+                aCreativeCompanyUserId,
+                aResponsibleCompanyUserId,
+                aCompanyId,
+                aNegotiationId,
+                aDescription,
+                aResponse,
+                aType,
+                aScheduleDate,
+                now,
+                now,
+                null
+        );
+    }
+
+    public static Activity newActivityFromId(
+            final String anId,
+            final Long aCreativeCompanyUserId,
+            final Long aResponsibleCompanyUserId,
+            final Long aCompanyId,
+            final Long aNegotiationId,
+            final String aDescription,
+            final String aResponse,
+            final ActivityType aType,
+            final Instant aScheduleDate
+    ) {
+<span class="nc" id="L123">        final var id = ActivityID.from(anId);</span>
+<span class="nc" id="L124">        final var now = Instant.now();</span>
+
+<span class="nc" id="L126">        return new Activity(</span>
+                id,
+                aCreativeCompanyUserId,
+                aResponsibleCompanyUserId,
+                aCompanyId,
+                aNegotiationId,
+                aDescription,
+                aResponse,
+                aType,
+                aScheduleDate,
+                now,
+                now,
+                null
+        );
+    }
+
+    public static Activity with(
+            final ActivityID anId,
+            final Long aCreativeCompanyUserId,
+            final Long aResponsibleCompanyUserId,
+            final Long aCompanyId,
+            final Long aNegotiationId,
+            final String aDescription,
+            final String aResponse,
+            final ActivityType aType,
+            final ActivityStatus aStatus,
+            final Instant aScheduled,
+            final Instant aCreatedAt,
+            final Instant anUpdatedAt,
+            final Instant aFinishedAt) {
+<span class="nc" id="L156">        return new Activity(</span>
+                anId,
+                aCreativeCompanyUserId,
+                aResponsibleCompanyUserId,
+                aCompanyId,
+                aNegotiationId,
+                aDescription,
+                aResponse,
+                aType,
+                aStatus,
+                aScheduled,
+                aCreatedAt,
+                anUpdatedAt,
+                aFinishedAt);
+    }
+
+    @Override
+    public void validate(final ValidationHandler handler) {
+<span class="fc" id="L174">        new ActivityValidator(this, handler).validate();</span>
+<span class="fc" id="L175">    }</span>
+
+
+    public Activity canceled() {
+<span class="fc" id="L179">        this.status = ActivityStatus.CANCELED;</span>
+<span class="fc" id="L180">        this.updatedAt = Instant.now();</span>
+
+<span class="fc" id="L182">        return this;</span>
+    }
+
+    public Activity activated() {
+<span class="fc" id="L186">        this.status = ActivityStatus.ACTIVE;</span>
+<span class="fc" id="L187">        this.updatedAt = Instant.now();</span>
+
+<span class="fc" id="L189">        return this;</span>
+    }
+
+    public Activity completed() {
+<span class="pc bpc" id="L193" title="1 of 2 branches missed.">        if (getFinishedAt() == null) {</span>
+<span class="fc" id="L194">            this.finishedAt = Instant.now();</span>
+        }
+
+<span class="fc" id="L197">        this.status = ActivityStatus.COMPLETED;</span>
+<span class="fc" id="L198">        this.updatedAt = Instant.now();</span>
+
+<span class="fc" id="L200">        return this;</span>
+    }
+
+    public Activity update(
+            final Long aCreativeCompanyUserId,
+            final Long aResponsibleCompanyUserId,
+            final Long aCompanyId,
+            final Long aNegotiationId,
+            final String aDescription,
+            final String aResponse,
+            final ActivityType aType,
+            final ActivityStatus aStatus,
+            final Instant aScheduleDate
+    ) {
+<span class="fc bfc" id="L214" title="All 2 branches covered.">        if (aStatus.equals(ActivityStatus.ACTIVE)) {</span>
+<span class="fc" id="L215">            activated();</span>
+        }
+
+<span class="fc bfc" id="L218" title="All 2 branches covered.">        if (aStatus.equals(ActivityStatus.CANCELED)) {</span>
+<span class="fc" id="L219">            canceled();</span>
+        }
+
+<span class="fc bfc" id="L222" title="All 2 branches covered.">        if (aStatus.equals(ActivityStatus.COMPLETED)) {</span>
+<span class="fc" id="L223">            completed();</span>
+        }
+
+<span class="fc" id="L226">        this.creativeCompanyUserId = aCreativeCompanyUserId;</span>
+<span class="fc" id="L227">        this.responsibleCompanyUserId = aResponsibleCompanyUserId;</span>
+<span class="fc" id="L228">        this.companyId = aCompanyId;</span>
+<span class="fc" id="L229">        this.negotiationId = aNegotiationId;</span>
+<span class="fc" id="L230">        this.description = aDescription;</span>
+<span class="fc" id="L231">        this.response = aResponse;</span>
+<span class="fc" id="L232">        this.type = aType;</span>
+<span class="fc" id="L233">        this.scheduled = aScheduleDate;</span>
+<span class="fc" id="L234">        this.updatedAt = Instant.now();</span>
+
+<span class="fc" id="L236">        return this;</span>
+    }
+
+    public ActivityID getId() {
+<span class="fc" id="L240">        return id;</span>
+    }
+
+    public Long getCreativeCompanyUserId() {
+<span class="fc" id="L244">        return creativeCompanyUserId;</span>
+    }
+
+    public Long getResponsibleCompanyUserId() {
+<span class="fc" id="L248">        return responsibleCompanyUserId;</span>
+    }
+
+    public Long getCompanyId() {
+<span class="fc" id="L252">        return companyId;</span>
+    }
+
+    public Long getNegotiationId() {
+<span class="fc" id="L256">        return negotiationId;</span>
+    }
+
+    public String getDescription() {
+<span class="fc" id="L260">        return description;</span>
+    }
+
+    public String getResponse() {
+<span class="fc" id="L264">        return response;</span>
+    }
+
+    public ActivityType getType() {
+<span class="fc" id="L268">        return type;</span>
+    }
+
+    public ActivityStatus getStatus() {
+<span class="fc" id="L272">        return status;</span>
+    }
+
+    public Instant getScheduled() {
+<span class="fc" id="L276">        return scheduled;</span>
+    }
+
+    public Instant getCreatedAt() {
+<span class="fc" id="L280">        return createdAt;</span>
+    }
+
+    public Instant getUpdatedAt() {
+<span class="fc" id="L284">        return updatedAt;</span>
+    }
+
+    public Instant getFinishedAt() {
+<span class="fc" id="L288">        return finishedAt;</span>
+    }
+
+    @Override
+    public Activity clone() {
+        try {
+<span class="nc" id="L294">            return (Activity) super.clone();</span>
+<span class="nc" id="L295">        } catch (CloneNotSupportedException e) {</span>
+<span class="nc" id="L296">            throw new AssertionError();</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

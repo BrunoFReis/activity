@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - CompleteActivityUseCaseIT</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>CompleteActivityUseCaseIT</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/br.com.powercrm.application.activity.complete.html">br.com.powercrm.application.activity.complete</a> &gt; CompleteActivityUseCaseIT</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">3</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.229s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">givenAInvalidID_whenCallCompleteActivity_thenShouldReturnBeOk()</td>
+<td class="success">0.149s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">givenAValidCommand_whenCallCompleteActivity_thenShouldBeOK()</td>
+<td class="success">0.072s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">givenAValidCommand_whenGatewayThrowsRandomException_thenShouldAException()</td>
+<td class="success">0.008s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>12:34:27.101 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+12:34:27.110 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+12:34:27.137 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [br.com.powercrm.application.activity.complete.CompleteActivityUseCaseIT] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+12:34:27.147 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [br.com.powercrm.application.activity.complete.CompleteActivityUseCaseIT], using SpringBootContextLoader
+12:34:27.150 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [br.com.powercrm.application.activity.complete.CompleteActivityUseCaseIT]: class path resource [br/com/powercrm/application/activity/complete/CompleteActivityUseCaseIT-context.xml] does not exist
+12:34:27.150 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [br.com.powercrm.application.activity.complete.CompleteActivityUseCaseIT]: class path resource [br/com/powercrm/application/activity/complete/CompleteActivityUseCaseITContext.groovy] does not exist
+12:34:27.150 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [br.com.powercrm.application.activity.complete.CompleteActivityUseCaseIT]: no resource found for suffixes {-context.xml, Context.groovy}.
+12:34:27.262 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [br.com.powercrm.application.activity.complete.CompleteActivityUseCaseIT]: using defaults.
+12:34:27.262 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+12:34:27.277 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7b5b5bfe, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@74834afd, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@75fd65c, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@d499c13, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2ceca2ef, org.springframework.test.context.support.DirtiesContextTestExecutionListener@42d6c12d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3b42121d, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7a2ab862, org.springframework.test.context.event.EventPublishingTestExecutionListener@33188612, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4733f6f5, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@6ccac6f4, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@438c9aa7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3453acd2, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@6c8f60f3, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@56c8e6f0]
+12:34:27.279 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@63f9b562 testClass = CompleteActivityUseCaseIT, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@20ead579 testClass = CompleteActivityUseCaseIT, locations = '{}', classes = '{class br.com.powercrm.infrastructure.configuration.WebServerConfig}', contextInitializerClasses = '[]', activeProfiles = '{test-integration}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@2630dbc4, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@181d8899, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@52f57666, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3a26ec8d, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@25cc835a, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@46aa712c, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@7048f722], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true]], class annotated with @DirtiesContext [false] with mode [null].
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.7)
+
+2023-06-03 12:34:27.554  INFO 49578 --- [    Test worker] b.c.p.a.a.c.CompleteActivityUseCaseIT    : Starting CompleteActivityUseCaseIT using Java 17.0.2 on MacBook-Air-de-Bruno.local with PID 49578 (started by bruno in /Users/bruno/trabalho/activity/infrastructure)
+2023-06-03 12:34:27.554  INFO 49578 --- [    Test worker] b.c.p.a.a.c.CompleteActivityUseCaseIT    : The following 1 profile is active: &quot;test-integration&quot;
+2023-06-03 12:34:28.114  INFO 49578 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-03 12:34:28.145  INFO 49578 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 1 JPA repository interfaces.
+2023-06-03 12:34:28.575  INFO 49578 --- [    Test worker] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2023-06-03 12:34:28.575  INFO 49578 --- [    Test worker] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2023-06-03 12:34:28.575  INFO 49578 --- [    Test worker] o.f.c.internal.license.VersionPrinter    : 
+2023-06-03 12:34:28.580  INFO 49578 --- [    Test worker] o.f.c.i.resource.ResourceNameValidator   : 1 SQL migrations were detected but not run because they did not follow the filename convention.
+2023-06-03 12:34:28.580  INFO 49578 --- [    Test worker] o.f.c.i.resource.ResourceNameValidator   : If this is in error, enable debug logging or 'validateMigrationNaming' to fail fast and see a list of the invalid file names.
+2023-06-03 12:34:28.582  WARN 49578 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : master - idleTimeout is close to or more than maxLifetime, disabling it.
+2023-06-03 12:34:28.583  INFO 49578 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : master - Starting...
+2023-06-03 12:34:28.817  INFO 49578 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : master - Start completed.
+2023-06-03 12:34:28.826  INFO 49578 --- [    Test worker] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:h2:mem:powercrm_activity_test (H2 2.1)
+2023-06-03 12:34:28.862  WARN 49578 --- [    Test worker] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 2.1.214 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.1.210.
+2023-06-03 12:34:28.877  INFO 49578 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.008s)
+2023-06-03 12:34:28.881  INFO 49578 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table &quot;public&quot;.&quot;flyway_schema_history&quot; ...
+2023-06-03 12:34:28.897  INFO 49578 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema &quot;public&quot;: &lt;&lt; Empty Schema &gt;&gt;
+2023-06-03 12:34:28.900  INFO 49578 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;public&quot; to version &quot;1 - CreateTableActivity&quot;
+2023-06-03 12:34:28.909  INFO 49578 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema &quot;public&quot;, now at version v1 (execution time 00:00.012s)
+2023-06-03 12:34:29.019  INFO 49578 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-03 12:34:29.071  INFO 49578 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-06-03 12:34:29.215  INFO 49578 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-03 12:34:29.305  INFO 49578 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2023-06-03 12:34:29.684  INFO 49578 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-03 12:34:29.690  INFO 49578 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-03 12:34:30.397  INFO 49578 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:mem:powercrm_activity_test'
+2023-06-03 12:34:30.645  INFO 49578 --- [    Test worker] b.c.p.a.a.c.CompleteActivityUseCaseIT    : Started CompleteActivityUseCaseIT in 3.339 seconds (JVM running for 4.314)
+Hibernate: select activityjp0_.id as id1_0_, activityjp0_.company_id as company_2_0_, activityjp0_.created_at as created_3_0_, activityjp0_.creative_company_user_id as creative4_0_, activityjp0_.description as descript5_0_, activityjp0_.finished_at as finished6_0_, activityjp0_.negotiation_id as negotiat7_0_, activityjp0_.response as response8_0_, activityjp0_.responsible_company_user_id as responsi9_0_, activityjp0_.scheduled as schedul10_0_, activityjp0_.status as status11_0_, activityjp0_.type as type12_0_, activityjp0_.updated_at as updated13_0_ from activities activityjp0_
+Hibernate: select activityjp0_.id as id1_0_0_, activityjp0_.company_id as company_2_0_0_, activityjp0_.created_at as created_3_0_0_, activityjp0_.creative_company_user_id as creative4_0_0_, activityjp0_.description as descript5_0_0_, activityjp0_.finished_at as finished6_0_0_, activityjp0_.negotiation_id as negotiat7_0_0_, activityjp0_.response as response8_0_0_, activityjp0_.responsible_company_user_id as responsi9_0_0_, activityjp0_.scheduled as schedul10_0_0_, activityjp0_.status as status11_0_0_, activityjp0_.type as type12_0_0_, activityjp0_.updated_at as updated13_0_0_ from activities activityjp0_ where activityjp0_.id=?
+Hibernate: select activityjp0_.id as id1_0_, activityjp0_.company_id as company_2_0_, activityjp0_.created_at as created_3_0_, activityjp0_.creative_company_user_id as creative4_0_, activityjp0_.description as descript5_0_, activityjp0_.finished_at as finished6_0_, activityjp0_.negotiation_id as negotiat7_0_, activityjp0_.response as response8_0_, activityjp0_.responsible_company_user_id as responsi9_0_, activityjp0_.scheduled as schedul10_0_, activityjp0_.status as status11_0_, activityjp0_.type as type12_0_, activityjp0_.updated_at as updated13_0_ from activities activityjp0_
+Hibernate: select count(*) as col_0_0_ from activities activityjp0_
+Hibernate: insert into activities (company_id, created_at, creative_company_user_id, description, finished_at, negotiation_id, response, responsible_company_user_id, scheduled, status, type, updated_at) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select activityjp0_.id as id1_0_0_, activityjp0_.company_id as company_2_0_0_, activityjp0_.created_at as created_3_0_0_, activityjp0_.creative_company_user_id as creative4_0_0_, activityjp0_.description as descript5_0_0_, activityjp0_.finished_at as finished6_0_0_, activityjp0_.negotiation_id as negotiat7_0_0_, activityjp0_.response as response8_0_0_, activityjp0_.responsible_company_user_id as responsi9_0_0_, activityjp0_.scheduled as schedul10_0_0_, activityjp0_.status as status11_0_0_, activityjp0_.type as type12_0_0_, activityjp0_.updated_at as updated13_0_0_ from activities activityjp0_ where activityjp0_.id=?
+Hibernate: select count(*) as col_0_0_ from activities activityjp0_
+Hibernate: select activityjp0_.id as id1_0_0_, activityjp0_.company_id as company_2_0_0_, activityjp0_.created_at as created_3_0_0_, activityjp0_.creative_company_user_id as creative4_0_0_, activityjp0_.description as descript5_0_0_, activityjp0_.finished_at as finished6_0_0_, activityjp0_.negotiation_id as negotiat7_0_0_, activityjp0_.response as response8_0_0_, activityjp0_.responsible_company_user_id as responsi9_0_0_, activityjp0_.scheduled as schedul10_0_0_, activityjp0_.status as status11_0_0_, activityjp0_.type as type12_0_0_, activityjp0_.updated_at as updated13_0_0_ from activities activityjp0_ where activityjp0_.id=?
+Hibernate: select activityjp0_.id as id1_0_0_, activityjp0_.company_id as company_2_0_0_, activityjp0_.created_at as created_3_0_0_, activityjp0_.creative_company_user_id as creative4_0_0_, activityjp0_.description as descript5_0_0_, activityjp0_.finished_at as finished6_0_0_, activityjp0_.negotiation_id as negotiat7_0_0_, activityjp0_.response as response8_0_0_, activityjp0_.responsible_company_user_id as responsi9_0_0_, activityjp0_.scheduled as schedul10_0_0_, activityjp0_.status as status11_0_0_, activityjp0_.type as type12_0_0_, activityjp0_.updated_at as updated13_0_0_ from activities activityjp0_ where activityjp0_.id=?
+Hibernate: update activities set company_id=?, created_at=?, creative_company_user_id=?, description=?, finished_at=?, negotiation_id=?, response=?, responsible_company_user_id=?, scheduled=?, status=?, type=?, updated_at=? where id=?
+Hibernate: select count(*) as col_0_0_ from activities activityjp0_
+Hibernate: select activityjp0_.id as id1_0_0_, activityjp0_.company_id as company_2_0_0_, activityjp0_.created_at as created_3_0_0_, activityjp0_.creative_company_user_id as creative4_0_0_, activityjp0_.description as descript5_0_0_, activityjp0_.finished_at as finished6_0_0_, activityjp0_.negotiation_id as negotiat7_0_0_, activityjp0_.response as response8_0_0_, activityjp0_.responsible_company_user_id as responsi9_0_0_, activityjp0_.scheduled as schedul10_0_0_, activityjp0_.status as status11_0_0_, activityjp0_.type as type12_0_0_, activityjp0_.updated_at as updated13_0_0_ from activities activityjp0_ where activityjp0_.id=?
+Hibernate: select activityjp0_.id as id1_0_, activityjp0_.company_id as company_2_0_, activityjp0_.created_at as created_3_0_, activityjp0_.creative_company_user_id as creative4_0_, activityjp0_.description as descript5_0_, activityjp0_.finished_at as finished6_0_, activityjp0_.negotiation_id as negotiat7_0_, activityjp0_.response as response8_0_, activityjp0_.responsible_company_user_id as responsi9_0_, activityjp0_.scheduled as schedul10_0_, activityjp0_.status as status11_0_, activityjp0_.type as type12_0_, activityjp0_.updated_at as updated13_0_ from activities activityjp0_
+Hibernate: delete from activities where id=?
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.6</a> at 3 de jun. de 2023 12:34:48</p>
+</div>
+</div>
+</body>
+</html>

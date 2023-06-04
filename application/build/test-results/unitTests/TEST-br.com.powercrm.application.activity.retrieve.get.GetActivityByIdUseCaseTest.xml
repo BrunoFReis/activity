@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="br.com.powercrm.application.activity.retrieve.get.GetActivityByIdUseCaseTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-05-30T17:26:04" hostname="MacBook-Air-de-Bruno.local" time="0.013">
+  <properties/>
+  <testcase name="givenAInvalidID_whenCallGetActivityById_thenShouldReturnNotFoundException()" classname="br.com.powercrm.application.activity.retrieve.get.GetActivityByIdUseCaseTest" time="0.002"/>
+  <testcase name="givenAValidCommand_whenGatewayThrowsRandomException_thenShouldAException()" classname="br.com.powercrm.application.activity.retrieve.get.GetActivityByIdUseCaseTest" time="0.001"/>
+  <testcase name="givenAValidCommand_whenCallGetActivityById_thenShouldReturnActivity()" classname="br.com.powercrm.application.activity.retrieve.get.GetActivityByIdUseCaseTest" time="0.01"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

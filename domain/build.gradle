@@ -1,0 +1,11 @@
+plugins {
+    id 'java-conventions'
+    id 'java-library'
+}
+
+group 'br.com.powercrm.domain'
+
+dependencies {
+
+}
+
